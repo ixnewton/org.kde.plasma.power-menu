@@ -12,8 +12,19 @@ This is a re-worked version of the current org.kde.plasma.quicklaunch widget. Th
 
 When it has been road tested I will try to have these improvments accepted by the official KDE repo.
 
-Install by replacing the contents of your /usr/share/plasma/plasmoids/org.kde.plasma.quicklaunch/ with the downloaded version from here.
+Install with kpackagetool6 (Plasma 6):
 
-Restart KDE Plasma using: kquitapp5 plasmashell && kstart5 plasmashell
+    kpackagetool6 -t Plasma/Applet -i .          # first install
+    kpackagetool6 -t Plasma/Applet -u .          # upgrade existing
+
+Or copy the directory to ~/.local/share/plasma/plasmoids/org.kde.plasma.power-menu/
+
+Restart KDE Plasma (Plasma 6 / Wayland):
+
+    systemctl --user restart plasma-plasmashell.service
+
+On X11 you can instead use:
+
+    kquitapp6 plasmashell && kstart6 plasmashell
 
 ![Screenshot_20250702_221558_b](https://github.com/user-attachments/assets/2bdd486f-25dc-4452-bd96-601fda6da54c)
